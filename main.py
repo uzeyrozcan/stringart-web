@@ -109,7 +109,7 @@ def process_string_art(image_path, params):
             # Generate colored instructions for circle mode
             if params.get('shape_type') == 'circle':
                 colored_instructions = convert_pull_order_to_colored(pull_orders_r, params['total_nails'])
-                pull_order_str = ' | '.join(colored_instructions[:20])  # Show first 20 instructions
+                pull_order_str = ' '.join(colored_instructions[:20])  # Show first 20 instructions
                 
                 # Save full instructions to text file
                 with open(instructions_path, 'w', encoding='utf-8') as f:
@@ -130,8 +130,9 @@ def process_string_art(image_path, params):
                     f.write(f"- Yellow: 9 o'clock (indices 100-149)\n\n")
                     f.write(f"Instructions ({len(colored_instructions)} total):\n")
                     f.write(f"{'='*50}\n")
-                    for i, instruction in enumerate(colored_instructions, 1):
-                        f.write(f"{i:4d}. {instruction}\n")
+                    # Convert colors to Turkish for txt file
+                    turkish_instructions = ' '.join(colored_instructions).replace('Red', 'Kırmızı').replace('Blue', 'Mavi').replace('Green', 'Yeşil').replace('Yellow', 'Sarı')
+                    f.write(turkish_instructions)
             else:
                 pull_order_str = '-'.join([str(idx) for idx in pull_orders_r[:100]])
                 
@@ -183,7 +184,7 @@ def process_string_art(image_path, params):
             # Generate colored instructions for circle mode
             if params.get('shape_type') == 'circle':
                 colored_instructions = convert_pull_order_to_colored(pull_order, params['total_nails'])
-                pull_order_str = ' | '.join(colored_instructions[:20])  # Show first 20 instructions
+                pull_order_str = ' '.join(colored_instructions[:20])  # Show first 20 instructions
                 
                 # Save full instructions to text file
                 with open(instructions_path, 'w', encoding='utf-8') as f:
@@ -204,8 +205,9 @@ def process_string_art(image_path, params):
                     f.write(f"- Yellow: 9 o'clock (indices 100-149)\n\n")
                     f.write(f"Instructions ({len(colored_instructions)} total):\n")
                     f.write(f"{'='*50}\n")
-                    for i, instruction in enumerate(colored_instructions, 1):
-                        f.write(f"{i:4d}. {instruction}\n")
+                    # Convert colors to Turkish for txt file
+                    turkish_instructions = ' '.join(colored_instructions).replace('Red', 'Kırmızı').replace('Blue', 'Mavi').replace('Green', 'Yeşil').replace('Yellow', 'Sarı')
+                    f.write(turkish_instructions)
             else:
                 pull_order_str = '-'.join([str(idx) for idx in pull_order[:100]])
                 
@@ -351,7 +353,7 @@ def process_string_art_async(image_path, params, task_id):
             # Generate colored instructions for circle mode
             if params.get('shape_type') == 'circle':
                 colored_instructions = convert_pull_order_to_colored(pull_orders_r, params['total_nails'])
-                pull_order_str = ' | '.join(colored_instructions[:20])  # Show first 20 instructions
+                pull_order_str = ' '.join(colored_instructions[:20])  # Show first 20 instructions
                 
                 # Save full instructions to text file
                 with open(instructions_path, 'w', encoding='utf-8') as f:
@@ -372,8 +374,9 @@ def process_string_art_async(image_path, params, task_id):
                     f.write(f"- Yellow: 9 o'clock (indices 100-149)\n\n")
                     f.write(f"Instructions ({len(colored_instructions)} total):\n")
                     f.write(f"{'='*50}\n")
-                    for i, instruction in enumerate(colored_instructions, 1):
-                        f.write(f"{i:4d}. {instruction}\n")
+                    # Convert colors to Turkish for txt file
+                    turkish_instructions = ' '.join(colored_instructions).replace('Red', 'Kırmızı').replace('Blue', 'Mavi').replace('Green', 'Yeşil').replace('Yellow', 'Sarı')
+                    f.write(turkish_instructions)
             else:
                 pull_order_str = '-'.join([str(idx) for idx in pull_orders_r[:100]])
                 
@@ -432,7 +435,7 @@ def process_string_art_async(image_path, params, task_id):
             # Generate colored instructions for circle mode
             if params.get('shape_type') == 'circle':
                 colored_instructions = convert_pull_order_to_colored(pull_order, params['total_nails'])
-                pull_order_str = ' | '.join(colored_instructions[:20])  # Show first 20 instructions
+                pull_order_str = ' '.join(colored_instructions[:20])  # Show first 20 instructions
                 
                 # Save full instructions to text file
                 with open(instructions_path, 'w', encoding='utf-8') as f:
@@ -453,8 +456,9 @@ def process_string_art_async(image_path, params, task_id):
                     f.write(f"- Yellow: 9 o'clock (indices 100-149)\n\n")
                     f.write(f"Instructions ({len(colored_instructions)} total):\n")
                     f.write(f"{'='*50}\n")
-                    for i, instruction in enumerate(colored_instructions, 1):
-                        f.write(f"{i:4d}. {instruction}\n")
+                    # Convert colors to Turkish for txt file
+                    turkish_instructions = ' '.join(colored_instructions).replace('Red', 'Kırmızı').replace('Blue', 'Mavi').replace('Green', 'Yeşil').replace('Yellow', 'Sarı')
+                    f.write(turkish_instructions)
             else:
                 pull_order_str = '-'.join([str(idx) for idx in pull_order[:100]])
                 
