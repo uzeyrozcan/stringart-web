@@ -237,17 +237,12 @@ def get_nail_color_and_number(nail_index, total_nails):
         return "Blue", nail_index - 3 * nails_per_quadrant + 1
 
 def convert_pull_order_to_colored(pull_order, total_nails):
-    """Convert pull order to colored format like 'Blue 1 -> Red 30'"""
+    """Convert pull order to colored format like 'Red 1 . Yellow 11 . Blue 49 .'"""
     colored_instructions = []
     
-    for i in range(len(pull_order) - 1):
-        from_nail = pull_order[i]
-        to_nail = pull_order[i + 1]
-        
-        from_color, from_num = get_nail_color_and_number(from_nail, total_nails)
-        to_color, to_num = get_nail_color_and_number(to_nail, total_nails)
-        
-        instruction = f"{from_color} {from_num} -> {to_color} {to_num}"
+    for nail_index in pull_order:
+        color, num = get_nail_color_and_number(nail_index, total_nails)
+        instruction = f"{color} {num} ."
         colored_instructions.append(instruction)
     
     return colored_instructions
